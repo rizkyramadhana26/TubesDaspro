@@ -1,4 +1,4 @@
-import argparse, sys, os, variabelGlobal, dashboard, validasi, user
+import argparse, sys, os, time, variabelGlobal, dashboard, validasi, user
 #Mengambil argumen yang diberikan melalui CLI
 parser = argparse.ArgumentParser()
 parser.add_argument("namaFolder")
@@ -12,10 +12,24 @@ if not os.path.isdir(folderDir) :
 
 #PROSEDUR UNTUK LOAD DATA
 variabelGlobal.Load(folderDir)
-
+print("Loading..")
+time.sleep(2)
+print("\nSelamat datang di \"Kantong Ajaib!\"")
+while True:
+    inUser = input("\n>>> ")
+    if inUser == 'help': 
+        print("\n======= HELP =======") # dengan asumsi help hanya berisi login dan exit
+        print(" login - login ke sistem kantong ajaib")
+        print(" exit - keluar dari sistem kantong ajaib")
+    elif inUser == 'login':
+        break
+    elif inUser == 'exit':
+        sys.exit()
+    else:
+        print(" inputan tidak ada pada pilihan, coba ketik help untuk melhat list help")
 #WAJIB LOGIN TERLEBIH DAHULU
 while True: # Akan terus mengulang sampe username dan password yang dimasukkan sesuai
-    print("======= Login =======")
+    print("\n======= Login =======")
     username = input('Masukkan username: ')
     password = input('Masukkan password: ')
     if validasi.isCredentialValid(username,password):
