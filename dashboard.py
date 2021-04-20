@@ -1,4 +1,4 @@
-import gadget, modifItem, user, save
+import gadget, modifItem, user, save, consumable
 def Show(role):    # Laman Utama [Ini tidak sesuai spesifikasi yang diinginkan]
     print("\n======== Command =========")
     print(" 1.  Mencari gadget berdasarkan rarity [carirarity]")
@@ -75,6 +75,22 @@ def Show(role):    # Laman Utama [Ini tidak sesuai spesifikasi yang diinginkan]
                 pil = input("Apa masih ingin meminjam lagi (y/n)?:\n>>> ")
                 if pil == 'n':
                     Show(role) 
+        else:
+            print('Anda tidak memiliki ijin akses')
+            Show(role)
+    if inUser == 'minta':
+        if role == 'user':
+            while True:
+                consumable.minta()
+                pil = input("Apa masih ingin meminta lagi (y/n)?:\n>>> ")
+                if pil == 'n':
+                    Show(role) 
+        else:
+            print('Anda tidak memiliki ijin akses')
+            Show(role)
+    if inUser == 'riwayatambil':
+        if role = 'admin':
+            consumable.riwayatambil()
         else:
             print('Anda tidak memiliki ijin akses')
             Show(role)
