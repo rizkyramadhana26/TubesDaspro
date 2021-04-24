@@ -71,7 +71,7 @@ def Show(role):    # Laman Utama [Ini tidak sesuai spesifikasi yang diinginkan]
             print('Anda tidak memiliki ijin akses')
             Show(role)
     if inUser == 'riwayatambil':
-        if role = 'admin':
+        if role == 'admin':
             consumable.riwayatambil()
         else:
             print('Anda tidak memiliki ijin akses')
