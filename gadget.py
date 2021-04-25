@@ -92,7 +92,7 @@ def PinjamGadget():
     if variabelGlobal.gadget_borrow_history['data'] == []:
         variabelGlobal.gadget_borrow_history['data'].append([1, variabelGlobal.id_user, id_item, tanggal_peminjaman, jumlah_peminjaman])
     else :
-        indeks_terakhir = int(gadget_borrow_history['data'][-1][0])
+        indeks_terakhir = int(variabelGlobal.gadget_borrow_history['data'][-1][0])
         variabelGlobal.gadget_borrow_history['data'].append([indeks_terakhir+1, variabelGlobal.id_user, id_item, tanggal_peminjaman, jumlah_peminjaman])
         
     #Mengurangi jumlah di gadget
