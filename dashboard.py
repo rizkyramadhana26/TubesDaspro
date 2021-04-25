@@ -95,7 +95,7 @@ def Show(role):    # Laman Utama [Ini tidak sesuai spesifikasi yang diinginkan]
             print('Anda tidak memiliki ijin akses')
             Show(role)
     if inUser == 'exit':
-        pil = input("Apa Anda ingin untuk menyimpan perubahan (y/n)?\n>>> "
+        pil = input("Apa Anda ingin untuk menyimpan perubahan (y/n)?\n>>> ")
         if pil == 'y':
             save.Save()
         exit()
