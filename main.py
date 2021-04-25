@@ -41,6 +41,6 @@ while True: # Akan terus mengulang sampe username dan password yang dimasukkan s
 variabelGlobal.username = username
 variabelGlobal.role = role
 #Ketika berhasil login, username pengguna disimpan di variabel 'username' dan id pengguna yang bersangkutan
-#disimpan di variabel 'id_user' (dideklarasi di dalam fungsi isUsernameValid)
+#disimpan di variabel 'id_user' (dideklarasi di dalam fungsi isCredentialValid)
 dashboard.Show(role)
 
