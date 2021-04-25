@@ -16,6 +16,15 @@ def isJumlahPeminjamanValid(id_gadget, jumlahPeminjaman) :
     else :
         return False
 
+def isSedangDipinjam(user_id, gadget_id):
+    #input : user_id dan gadget_id
+    #output : mengembalikan True apabila user dengan id user_id sedang meminjam gadget dengan id gadget_id, selain itu False
+    sedangDipinjam = False
+    for baris in variabelGlobal.gadget_borrow_history['data']:
+        if (baris[1] == user_id) and (baris[2]==gadget_id) and (baris[5]=='n'):
+            sedangDipinjam = True
+    return sedangDipinjam
+
 def isTanggalValid(tanggal):
     #input : sebuah string yang merepresentasikan tanggal
     #output : True apabila tanggal sesuai dengan format 'DD/MM/YYYY'
