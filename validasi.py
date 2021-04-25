@@ -12,7 +12,7 @@ def isJumlahPeminjamanValid(id_gadget, jumlahPeminjaman) :
         listofIDGadget = [item[0] for item in variabelGlobal.gadget['data']]
         indeks = listofIDGadget.index(id_gadget)
         sisaGadget = variabelGlobal.gadget['data'][indeks][3]
-        return jumlahPeminjaman <= sisaGadget
+        return int(jumlahPeminjaman) <= int(sisaGadget)
     else :
         return False
 
