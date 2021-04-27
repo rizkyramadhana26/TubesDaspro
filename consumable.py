@@ -112,6 +112,9 @@ def cetakRiwayat(count,sortedriwayat,panjang): # fungsi untuk mencetak riwayat p
             return cetakRiwayat(count,sortedriwayat,panjang-5) # mengembalikan pada fungsi cetak riwayat dan mengurangi panjang list yang belum dicetak 
         else :
             return
+    elif panjang == 0: # tidak terdapat data pada file consumable_history
+        print("Tidak terdapat data riwayat pengambilan.")
+        return
     else : # panjang data <= 5
         for i in range(count,len(sortedriwayat)): # prosedur percetakan
             print("\nID Pengambilan          :", sortedriwayat[i][0])
