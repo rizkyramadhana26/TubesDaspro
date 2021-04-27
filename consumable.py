@@ -64,7 +64,7 @@ def masukanconsum(idx,i): # fungsi untuk menerima masukan jumlah dan tanggal
                 return 
         else: # masukan jumlah telah valid dan tidak melebihi consumables yang tersedia
             date = input("Tanggal permintaan     : ")
-            if not(isTanggalValid(date)): # validasi input tanggal
+            if not(validasi.isTanggalValid(date)): # validasi input tanggal
                 print("\nMaaf, masukan tanggal Anda tidak valid.")
                 pil = input("Apa ingin mengulangi prosedur minta item?(y/n)")
                 if pil == "y" :
