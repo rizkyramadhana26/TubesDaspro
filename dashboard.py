@@ -1,23 +1,5 @@
 import gadget, modifItem, user, save, consumable
 def Show(role):    # Laman Utama [Ini tidak sesuai spesifikasi yang diinginkan]
-    print("\n======== Command =========")
-    print(" 1.  Mencari gadget berdasarkan rarity [carirarity]")
-    print(" 2.  Mencari gadget berdasarkan tahun [caritahun]")
-    if role == 'admin':
-        print(" 3.  Menambah item (gadget/consumable) [tambahitem]")
-        print(" 4.  Menghapus item (gadget/consumable) [hapusitem]")
-        print(" 5.  Mengubah jumlah (gadget/consumable) [ubahjumlah]")
-    if role == 'user':
-        print(" 3.  Meminjam gadget [pinjam]")
-        print(" 4.  Mengembalikan gadget [kembalikan]")
-        print(" 5.  Meminta consumable [minta]")
-        print(" 6.  Exit [exit]\n")
-    if role == 'admin':
-        print(" 6.  Melihat riwayat peminjaman gadget [riwayatpinjam]")
-        print(" 7.  Melihat riwayat pengembalian gadget [riwayatkembali]")
-        print(" 8.  Melihat riwayat pengambilan consumable [riwayatambil]")
-        print(" 9.  Register [register]")
-        print(" 10. Exit [exit]\n")
     inUser = input(">>> ")
     # aksi yang terjadi berdasarkan input user
     if inUser == 'caritahun':
@@ -104,12 +86,39 @@ def Show(role):    # Laman Utama [Ini tidak sesuai spesifikasi yang diinginkan]
         else:
             print('Anda tidak memiliki ijin akses')
             Show(role)
+    if inUser == 'help':
+        print("\n======== Help Command =========")
+        print(" 1.  Mencari gadget berdasarkan rarity       [carirarity]")
+        print(" 2.  Mencari gadget berdasarkan tahun        [caritahun]")
+        if role == 'admin':
+            print(" 3.  Menambah item (gadget/consumable)       [tambahitem]")
+            print(" 4.  Menghapus item (gadget/consumable)      [hapusitem]")
+            print(" 5.  Mengubah jumlah (gadget/consumable)     [ubahjumlah]")
+        if role == 'user':
+            print(" 3.  Meminjam gadget                         [pinjam]")
+            print(" 4.  Mengembalikan gadget                    [kembalikan]")
+            print(" 5.  Meminta consumable                      [minta]")
+            print(" 6.  Menyimpan perubahan                     [save]")
+            print(" 7.  Meminta list command                    [help]")
+            print(" 8.  Keluar dari kantongajaib                [exit]\n")
+        if role == 'admin':
+            print(" 6.  Melihat riwayat peminjaman gadget       [riwayatpinjam]")
+            print(" 7.  Melihat riwayat pengembalian gadget     [riwayatkembali]")
+            print(" 8.  Melihat riwayat pengambilan consumable  [riwayatambil]")
+            print(" 9.  Menambah user baru                      [register]")
+            print(" 10. Menyimpan perubahan                     [save]")
+            print(" 11. Meminta list command                    [help]")
+            print(" 12. Keluar dari kantongajaib                [exit]\n")
+        Show(role)
+    if inUser == 'save':
+        save.Save()
+        Show(role)
     if inUser == 'exit':
         pil = input("Apa Anda ingin untuk menyimpan perubahan (y/n)?\n>>> ")
         if pil == 'y':
             save.Save()
         exit()
     else:
-        print('Terdapat kesalahan input, mohon ketik ulang')
+        print('Terdapat kesalahan input, ketik \'help\' agar melihat list command')
         Show(role)
     return
