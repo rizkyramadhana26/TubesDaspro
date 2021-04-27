@@ -1,4 +1,4 @@
-import gadget, modifItem, user, save, consumable
+import gadget, modifItem, user, save, consumable #riwayatkembali, riwayatpinjam
 def Show(role):    # Laman Utama [Ini tidak sesuai spesifikasi yang diinginkan]
     inUser = input(">>> ")
     # aksi yang terjadi berdasarkan input user
@@ -83,6 +83,21 @@ def Show(role):    # Laman Utama [Ini tidak sesuai spesifikasi yang diinginkan]
     if inUser == 'riwayatambil':
         if role == 'admin':
             consumable.riwayatambil()
+            Show(role)
+        else:
+            print('Anda tidak memiliki ijin akses')
+            Show(role)
+    if inUser == 'riwayatpinjam':
+        if role == 'admin':
+            gadget.riwayatpinjam()
+            Show(role)
+        else:
+            print('Anda tidak memiliki ijin akses')
+            Show(role)
+    if inUser == 'riwayatkembali':
+        if role == 'admin':
+            gadget.riwayatkembali()
+            Show(role)
         else:
             print('Anda tidak memiliki ijin akses')
             Show(role)

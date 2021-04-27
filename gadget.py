@@ -1,4 +1,6 @@
 import validasi, variabelGlobal
+from datetime import datetime
+from riwayatGadget import cetakRiwayatPinjam, cetakRiwayatKembali
 
 def carirarity():   # Fungsi carirarity
     rarity = input("\nMasukkan rarity: ")
@@ -141,10 +143,6 @@ def KembalikanGadget():
 
     print('Item '+data[0][yangDikembalikan-1]+' telah dikembalikan sebanyak '+str(jumlah_pengembalian)+' buah !')
 
-  
-    
-
-            
 
 def PinjamGadget():
     #Prosedur
@@ -219,3 +217,14 @@ def TunjukkanDaftarGadget():
 
     return [daftarGadgetYangDipinjam, jumlahGadgetYangDipinjam, IDPeminjaman] #Mengembalikan data gadget yang dipinjam
     
+def riwayatpinjam():
+    sortedriwayat = sorted(variabelGlobal.gadget_borrow_history['data'], key = lambda row: datetime.strptime(row[3], "%d/%m/%Y"), reverse = True)
+    count = 0
+    panjang = len(sortedriwayat)
+    cetakRiwayatPinjam(count,sortedriwayat,panjang)
+
+def riwayatkembali():
+    sortedriwayat = sorted(variabelGlobal.gadget_return_history['data'], key = lambda row: datetime.strptime(row[3], "%d/%m/%Y"), reverse = True)
+    count = 0
+    panjang = len(sortedriwayat)
+    cetakRiwayatPinjam(count,sortedriwayat,panjang)
