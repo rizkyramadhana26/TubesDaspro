@@ -218,13 +218,14 @@ def TunjukkanDaftarGadget():
     return [daftarGadgetYangDipinjam, jumlahGadgetYangDipinjam, IDPeminjaman] #Mengembalikan data gadget yang dipinjam
     
 def riwayatpinjam():
-    sortedriwayat = sorted(variabelGlobal.gadget_borrow_history['data'], key = lambda row: datetime.strptime(row[3], "%d/%m/%Y"), reverse = True)
+    sortedriwayatPinjam = sorted(variabelGlobal.gadget_borrow_history['data'], key = lambda row: datetime.strptime(row[3], "%d/%m/%Y"), reverse = True)
     count = 0
-    panjang = len(sortedriwayat)
-    cetakRiwayatPinjam(count,sortedriwayat,panjang)
+    panjang = len(sortedriwayatPinjam)
+    cetakRiwayatPinjam(count,sortedriwayatPinjam,panjang)
 
 def riwayatkembali():
-    sortedriwayat = sorted(variabelGlobal.gadget_return_history['data'], key = lambda row: datetime.strptime(row[3], "%d/%m/%Y"), reverse = True)
+    sortedriwayatPinjam = sorted(variabelGlobal.gadget_borrow_history['data'], key = lambda row: datetime.strptime(row[3], "%d/%m/%Y"), reverse = True)
+    sortedriwayatKembali = sorted(variabelGlobal.gadget_return_history['data'], key = lambda row: datetime.strptime(row[2], "%d/%m/%Y"), reverse = True)
     count = 0
-    panjang = len(sortedriwayat)
-    cetakRiwayatPinjam(count,sortedriwayat,panjang)
+    panjang = len(sortedriwayatKembali)
+    cetakRiwayatKembali(count,sortedriwayatPinjam,sortedriwayatKembali,panjang)
