@@ -4,7 +4,7 @@ from datetime import datetime
 def cetakRiwayatPinjam(count,sortedriwayat,panjang): # fungsi untuk mencetak riwayat pengambilan
     if panjang > 1 : # mengecek panjang list yang belum dicetak
         for i in range(count,count + 1): # prosedur percetakan
-            print("\nID Pengambilan          :", sortedriwayat[i][0])
+            print("\nID Peminjaman           :", sortedriwayat[i][0])
             for j in range(len(variabelGlobal.user['data'])):
                 if sortedriwayat[i][1] == variabelGlobal.user['data'][j][0]:
                     print("Nama Pengambil          :", variabelGlobal.user['data'][j][1])
@@ -13,7 +13,7 @@ def cetakRiwayatPinjam(count,sortedriwayat,panjang): # fungsi untuk mencetak riw
                 if sortedriwayat[i][2] == variabelGlobal.gadget['data'][k][0]:
                     print("Nama Gadget             :", variabelGlobal.gadget['data'][k][1])
                     break
-            print("Tanggal Pengambilan     :", sortedriwayat[i][3])
+            print("Tanggal Peminjaman      :", sortedriwayat[i][3])
             print("Jumlah                  :", sortedriwayat[i][4])
         count += 1 # menambah jumlah data yang telah dicetak
         pil = input("\nApakah Anda ingin melihat data riwayat lainnya?(y/n)")
@@ -26,7 +26,7 @@ def cetakRiwayatPinjam(count,sortedriwayat,panjang): # fungsi untuk mencetak riw
         return
     else : # panjang data <= 1
         for i in range(count,len(sortedriwayat)): # prosedur percetakan
-            print("\nID Pengambilan          :", sortedriwayat[i][0])
+            print("\nID Peminjaman           :", sortedriwayat[i][0])
             for j in range(len(variabelGlobal.user['data'])):
                 if sortedriwayat[i][1] == variabelGlobal.user['data'][j][0]:
                     print("Nama Pengambil          :", variabelGlobal.user['data'][j][1])
@@ -35,14 +35,14 @@ def cetakRiwayatPinjam(count,sortedriwayat,panjang): # fungsi untuk mencetak riw
                 if sortedriwayat[i][2] == variabelGlobal.gadget['data'][k][0]:
                     print("Nama Gadget             :", variabelGlobal.gadget['data'][k][1])
                     break
-            print("Tanggal Pengambilan     :", sortedriwayat[i][3])
+            print("Tanggal Peminjaman      :", sortedriwayat[i][3])
             print("Jumlah                  :", sortedriwayat[i][4])
         return
 
 def cetakRiwayatKembali(count,sortedriwayatPinjam,sortedriwayatKembali,panjang): # fungsi untuk mencetak riwayat pengambilan
     if panjang > 1 : # mengecek panjang list yang belum dicetak
         for i in range(count,count + 1): # prosedur percetakan
-            print("\nID Pengambilan          :", sortedriwayatKembali[i][0])
+            print("\nID Pengembalian         :", sortedriwayatKembali[i][0])
             for j in range(len(variabelGlobal.user['data'])):
                 if sortedriwayatKembali[i][1] == variabelGlobal.user['data'][j][0]:
                     print("Nama Pengambil          :", variabelGlobal.user['data'][j][1])
@@ -51,8 +51,7 @@ def cetakRiwayatKembali(count,sortedriwayatPinjam,sortedriwayatKembali,panjang):
                 if sortedriwayatKembali[i][2] == variabelGlobal.gadget['data'][k][0]:
                     print("Nama Gadget             :", variabelGlobal.gadget['data'][k][1])
                     break
-            print("Tanggal Pengambilan     :", sortedriwayatKembali[i][2])
-            print("Jumlah                  :", sortedriwayatKembali[i][3])
+            print("Tanggal Pengembalian    :", sortedriwayatKembali[i][2])
             if sortedriwayatPinjam[i][5] == 'y':
                 print("Status                  : Sudah dikembalikan semua")
             else:
@@ -66,11 +65,11 @@ def cetakRiwayatKembali(count,sortedriwayatPinjam,sortedriwayatKembali,panjang):
         else :
             return
     elif panjang == 0: # tidak terdapat data pada file consumable_history
-        print("Tidak terdapat data riwayat pengambilan.")
+        print("Tidak terdapat data riwayat pengembalian.")
         return
     else : # panjang data <= 1
         for i in range(count,len(sortedriwayatKembali)): # prosedur percetakan
-            print("\nID Pengambilan          :", sortedriwayatKembali[i][0])
+            print("\nID Pengembalian         :", sortedriwayatKembali[i][0])
             for j in range(len(variabelGlobal.user['data'])):
                 if sortedriwayatKembali[i][1] == variabelGlobal.user['data'][j][0]:
                     print("Nama Pengambil          :", variabelGlobal.user['data'][j][1])
@@ -79,8 +78,7 @@ def cetakRiwayatKembali(count,sortedriwayatPinjam,sortedriwayatKembali,panjang):
                 if sortedriwayatKembali[i][2] == variabelGlobal.gadget['data'][k][0]:
                     print("Nama Gadget             :", variabelGlobal.consumable['data'][k][1])
                     break
-            print("Tanggal Pengambilan     :", sortedriwayatKembali[i][2])
-            print("Jumlah                  :", sortedriwayatKembali[i][3])
+            print("Tanggal Pengembalian    :", sortedriwayatKembali[i][2])
             if sortedriwayatPinjam[i][5] == 'y':
                 print("Status                  : Sudah dikembalikan semua")
             else:
