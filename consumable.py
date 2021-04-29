@@ -93,8 +93,8 @@ def riwayatambil(): # fungsi riwayat ambil
     cetakRiwayat(count,sortedriwayat,panjang) # melanjutkan pada fungsi cetak riwayat
 
 def cetakRiwayat(count,sortedriwayat,panjang): # fungsi untuk mencetak riwayat pengambilan
-    if panjang > 1 : # mengecek panjang list yang belum dicetak
-        for i in range(count,count + 1): # prosedur percetakan
+    if panjang > 5 : # mengecek panjang list yang belum dicetak
+        for i in range(count,count + 5): # prosedur percetakan
             print("\nID Pengambilan          :", sortedriwayat[i][0])
             for j in range(len(variabelGlobal.user['data'])):
                 if sortedriwayat[i][1] == variabelGlobal.user['data'][j][0]:
@@ -106,10 +106,10 @@ def cetakRiwayat(count,sortedriwayat,panjang): # fungsi untuk mencetak riwayat p
                     break
             print("Tanggal Pengambilan     :", sortedriwayat[i][3])
             print("Jumlah                  :", sortedriwayat[i][4])
-        count += 1 # menambah jumlah data yang telah dicetak
+        count += 5 # menambah jumlah data yang telah dicetak
         pil = input("\nApakah Anda ingin melihat data riwayat lainnya?(y/n)")
         if pil == "y" :
-            return cetakRiwayat(count,sortedriwayat,panjang-1) # mengembalikan pada fungsi cetak riwayat dan mengurangi panjang list yang belum dicetak 
+            return cetakRiwayat(count,sortedriwayat,panjang-5) # mengembalikan pada fungsi cetak riwayat dan mengurangi panjang list yang belum dicetak 
         else :
             return
     elif panjang == 0: # tidak terdapat data pada file consumable_history
