@@ -2,8 +2,8 @@ import validasi, variabelGlobal
 from datetime import datetime
 
 def cetakRiwayatPinjam(count,sortedriwayat,panjang): # fungsi untuk mencetak riwayat pengambilan
-    if panjang > 1 : # mengecek panjang list yang belum dicetak
-        for i in range(count,count + 1): # prosedur percetakan
+    if panjang > 5 : # mengecek panjang list yang belum dicetak
+        for i in range(count,count + 5): # prosedur percetakan
             print("\nID Peminjaman           :", sortedriwayat[i][0])
             for j in range(len(variabelGlobal.user['data'])):
                 if sortedriwayat[i][1] == variabelGlobal.user['data'][j][0]:
@@ -15,7 +15,7 @@ def cetakRiwayatPinjam(count,sortedriwayat,panjang): # fungsi untuk mencetak riw
                     break
             print("Tanggal Peminjaman      :", sortedriwayat[i][3])
             print("Jumlah                  :", sortedriwayat[i][4])
-        count += 1 # menambah jumlah data yang telah dicetak
+        count += 5 # menambah jumlah data yang telah dicetak
         pil = input("\nApakah Anda ingin melihat data riwayat lainnya?(y/n)")
         if pil == "y" :
             return cetakRiwayatPinjam(count,sortedriwayat,panjang-1) # mengembalikan pada fungsi cetak riwayat dan mengurangi panjang list yang belum dicetak 
@@ -24,7 +24,7 @@ def cetakRiwayatPinjam(count,sortedriwayat,panjang): # fungsi untuk mencetak riw
     elif panjang == 0: # tidak terdapat data pada file consumable_history
         print("Tidak terdapat data riwayat peminjaman.")
         return
-    else : # panjang data <= 1
+    else : # panjang data <= 5
         for i in range(count,len(sortedriwayat)): # prosedur percetakan
             print("\nID Peminjaman           :", sortedriwayat[i][0])
             for j in range(len(variabelGlobal.user['data'])):
@@ -40,8 +40,8 @@ def cetakRiwayatPinjam(count,sortedriwayat,panjang): # fungsi untuk mencetak riw
         return
 
 def cetakRiwayatKembali(count,sortedriwayatPinjam,sortedriwayatKembali,panjang): # fungsi untuk mencetak riwayat pengambilan
-    if panjang > 1 : # mengecek panjang list yang belum dicetak
-        for i in range(count,count + 1): # prosedur percetakan
+    if panjang > 5 : # mengecek panjang list yang belum dicetak
+        for i in range(count,count + 5): # prosedur percetakan
             print("\nID Pengembalian         :", sortedriwayatKembali[i][0])
             for j in range(len(variabelGlobal.user['data'])):
                 if sortedriwayatKembali[i][1] == variabelGlobal.user['data'][j][0]:
@@ -58,7 +58,7 @@ def cetakRiwayatKembali(count,sortedriwayatPinjam,sortedriwayatKembali,panjang):
                 sisa = int(sortedriwayatPinjam[i][4]) - int(sortedriwayatKembali[i][3])
                 print("Status                  : Belum dikembalikan semua")
                 print("Sisa                    : {}".format(sisa))
-        count += 1 # menambah jumlah data yang telah dicetak
+        count += 5 # menambah jumlah data yang telah dicetak
         pil = input("\nApakah Anda ingin melihat data riwayat lainnya?(y/n)")
         if pil == "y" :
             return cetakRiwayatKembali(count,sortedriwayatPinjam,sortedriwayatKembali,panjang-1) # mengembalikan pada fungsi cetak riwayat dan mengurangi panjang list yang belum dicetak 
