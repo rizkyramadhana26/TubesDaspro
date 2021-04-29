@@ -18,7 +18,7 @@ def cetakRiwayatPinjam(count,sortedriwayat,panjang): # fungsi untuk mencetak riw
         count += 5 # menambah jumlah data yang telah dicetak
         pil = input("\nApakah Anda ingin melihat data riwayat lainnya?(y/n)")
         if pil == "y" :
-            return cetakRiwayatPinjam(count,sortedriwayat,panjang-1) # mengembalikan pada fungsi cetak riwayat dan mengurangi panjang list yang belum dicetak 
+            return cetakRiwayatPinjam(count,sortedriwayat,panjang-5) # mengembalikan pada fungsi cetak riwayat dan mengurangi panjang list yang belum dicetak 
         else :
             return
     elif panjang == 0: # tidak terdapat data pada file consumable_history
@@ -61,7 +61,7 @@ def cetakRiwayatKembali(count,sortedriwayatPinjam,sortedriwayatKembali,panjang):
         count += 5 # menambah jumlah data yang telah dicetak
         pil = input("\nApakah Anda ingin melihat data riwayat lainnya?(y/n)")
         if pil == "y" :
-            return cetakRiwayatKembali(count,sortedriwayatPinjam,sortedriwayatKembali,panjang-1) # mengembalikan pada fungsi cetak riwayat dan mengurangi panjang list yang belum dicetak 
+            return cetakRiwayatKembali(count,sortedriwayatPinjam,sortedriwayatKembali,panjang-5) # mengembalikan pada fungsi cetak riwayat dan mengurangi panjang list yang belum dicetak 
         else :
             return
     elif panjang == 0: # tidak terdapat data pada file consumable_history
