@@ -67,7 +67,7 @@ def cetakRiwayatKembali(count,sortedriwayatPinjam,sortedriwayatKembali,panjang):
     elif panjang == 0: # tidak terdapat data pada file consumable_history
         print("Tidak terdapat data riwayat pengembalian.")
         return
-    else : # panjang data <= 1
+    else : # panjang data <= 5
         for i in range(count,len(sortedriwayatKembali)): # prosedur percetakan
             print("\nID Pengembalian         :", sortedriwayatKembali[i][0])
             for j in range(len(variabelGlobal.user['data'])):
