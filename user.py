@@ -26,7 +26,7 @@ def login():
         username = input('Masukkan username: ')
         password = input('Masukkan password: ')
         if validasi.isCredentialValid(username,password):
-                print('Halo {}!, Selamat datang di Kantong Ajaib.'.format(username))
-                role = checkRole(username)
-                return username, role
+            print('Halo {}!, Selamat datang di Kantong Ajaib.'.format(username))
+            role = checkRole(username)
+            return username, role
         print("Username atau password mungkin salah")
