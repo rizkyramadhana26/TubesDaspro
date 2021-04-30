@@ -38,15 +38,15 @@ def checkIDtambah(idx):
                 if variabelGlobal.consumable['data'][i][0] == idx:
                     print('\nGagal menambahkan item karena ID sudah ada')
                     return
-            namaConsm = input('Masukkan Nama: ') 
-            descConsm = input('Masukkan Deskripsi: ')
-            nConsm = input('Masukkan Jumlah: ')
-            rareConsm = input('Masukkan Rarity: ')
-            if rareConsm != 'C' and rareConsm != 'B' and rareConsm != 'A' and rareConsm != 'S':
+            namaConsum = input('Masukkan Nama: ') 
+            descConsum = input('Masukkan Deskripsi: ')
+            nConsum = input('Masukkan Jumlah: ')
+            rareConsum = input('Masukkan Rarity: ')
+            if rareConsum != 'C' and rareConsum != 'B' and rareConsum != 'A' and rareConsum != 'S':
                 print('\nInput rarity tidak valid!')
             else:
                 print('\nItem telah berhasil ditambahkan ke database')
-                newData = [idx,namaConsm,descConsm,nConsm,rareConsm]
+                newData = [idx,namaConsum,descConsum,nConsum,rareConsum]
                 variabelGlobal.consumable['data'].append(newData)
             return            
     return
