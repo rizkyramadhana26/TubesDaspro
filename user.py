@@ -19,3 +19,14 @@ def register(): # fungsi register
     variabelGlobal.user['data'].append(newUser)
     print("\nUser {} telah berhasil register ke dalam Kantong Ajaib".format(username))
     return
+
+def login():
+    while True: # Akan terus mengulang sampe username dan password yang dimasukkan sesuai
+        print("\n======= Login =======")
+        username = input('Masukkan username: ')
+        password = input('Masukkan password: ')
+        if validasi.isCredentialValid(username,password):
+                print('Halo {}!, Selamat datang di Kantong Ajaib.'.format(username))
+                role = checkRole(username)
+                return username, role
+        print("Username atau password mungkin salah")
