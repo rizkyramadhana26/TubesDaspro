@@ -45,11 +45,15 @@ def Show(role):    # Laman Utama [Ini tidak sesuai spesifikasi yang diinginkan]
             print('Anda tidak memiliki ijin akses')
             Show(role)
     if inUser == 'register':
-        while True:
-            user.register()
-            pil = input("Apa masih ingin me-register lagi (y/n)?:\n>>> ")
-            if pil == 'n':
-                Show(role)
+        if role == 'admin':
+            while True:
+                user.register()
+                pil = input("Apa masih ingin me-register lagi (y/n)?:\n>>> ")
+                if pil == 'n':
+                    Show(role)
+        else:
+            print('Anda tidak memiliki ijin akses')
+            Show(role)
     if inUser == 'pinjam':
         if role == 'user':
             while True:
@@ -108,14 +112,14 @@ def Show(role):    # Laman Utama [Ini tidak sesuai spesifikasi yang diinginkan]
         if role == 'admin':
             print(" 3.  Menambah item (gadget/consumable)       [tambahitem]")
             print(" 4.  Menghapus item (gadget/consumable)      [hapusitem]")
-            print(" 5.  Mengubah jumlah (gadget/consumable)     [ubahjumlah]")
+            print(" 5.  Mengubah jumlah item (gadget/consumable)[ubahjumlah]")
         if role == 'user':
             print(" 3.  Meminjam gadget                         [pinjam]")
             print(" 4.  Mengembalikan gadget                    [kembalikan]")
             print(" 5.  Meminta consumable                      [minta]")
             print(" 6.  Menyimpan perubahan                     [save]")
             print(" 7.  Meminta list command                    [help]")
-            print(" 8.  Keluar dari kantongajaib                [exit]\n")
+            print(" 8.  Keluar dari kantong ajaib               [exit]\n")
         if role == 'admin':
             print(" 6.  Melihat riwayat peminjaman gadget       [riwayatpinjam]")
             print(" 7.  Melihat riwayat pengembalian gadget     [riwayatkembali]")
@@ -123,7 +127,7 @@ def Show(role):    # Laman Utama [Ini tidak sesuai spesifikasi yang diinginkan]
             print(" 9.  Menambah user baru                      [register]")
             print(" 10. Menyimpan perubahan                     [save]")
             print(" 11. Meminta list command                    [help]")
-            print(" 12. Keluar dari kantongajaib                [exit]\n")
+            print(" 12. Keluar dari kantong ajaib               [exit]\n")
         Show(role)
     if inUser == 'save':
         save.Save()
