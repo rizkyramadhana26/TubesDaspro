@@ -27,7 +27,7 @@ while True:
     elif inUser == 'exit':
         sys.exit()
     else:
-        print(" inputan tidak ada pada pilihan, coba ketik help untuk melhat list help")
+        print(" inputan tidak ada pada pilihan, coba ketik \"help\" untuk melhat list help")
     
 variabelGlobal.username = username
 variabelGlobal.role = role
