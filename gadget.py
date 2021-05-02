@@ -6,6 +6,9 @@ def carirarity():   # Fungsi carirarity
     rarity = input("\nMasukkan rarity: ")
     print('\nHasil Pencarian:\n')
     count = 0
+    if (rarity != "C" and rarity != "B" and rarity != "A" and rarity != "S":
+        print("Tidak ada jenis rarity tersebut")
+        return
     for i in range(len(variabelGlobal.gadget['data'])):   # mengecek apakah barang dengan rarity tersebut ada, serta menghitung
         if rarity == variabelGlobal.gadget['data'][i][4]: # jumlah dari barang dengan rarity tersebut
             count += 1
